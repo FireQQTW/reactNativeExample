@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { ListView, Text, View } from 'react-native';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+
+import CameraDOM from './../camera'
+import Home from './../../pages/home'
+import ListExample from './../../pages/listView'
 
 class ListViewBasics extends Component {
   // Initialize the hardcoded data

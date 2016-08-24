@@ -3,13 +3,22 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "postinstall": "remotedev-debugger --hostname localhost --port 3456 --injectserver"
   },
   "dependencies": {
     "react": "15.2.1",
-    "react-native": "0.31.0",
+    "react-native": "^0.31.0",
     "react-native-button": "^1.6.0",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
-    "react-native-navbar": "^1.5.0"
+    "react-native-navbar": "^1.5.0",
+    "react-native-scrollable-tab-view": "^0.5.3"
+  },
+  "devDependencies": {
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "remote-redux-devtools": "^0.4.2",
+    "remote-redux-devtools-on-debugger": "^0.6.2"
   }
 }
