@@ -7,18 +7,27 @@
     "postinstall": "remotedev-debugger --hostname localhost --port 3456 --injectserver"
   },
   "dependencies": {
+    "apisauce": "^0.4.0",
     "react": "15.2.1",
     "react-native": "^0.31.0",
     "react-native-button": "^1.6.0",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-navbar": "^1.5.0",
-    "react-native-scrollable-tab-view": "^0.5.3"
+    "react-native-scrollable-tab-view": "^0.5.3",
+    "redux-logger": "^2.6.1"
   },
   "devDependencies": {
     "react-redux": "^4.4.5",
+    "reactotron-apisauce": "^1.0.0",
+    "reactotron-react-native": "^1.0.0",
+    "reactotron-redux": "^1.0.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "remote-redux-devtools": "^0.4.2",
-    "remote-redux-devtools-on-debugger": "^0.6.2"
-  }
+    "remote-redux-devtools-on-debugger": "^0.6.2",
+    "socket.io": "^1.4.8"
+  },
+  "globals": [
+    "__DEV__"
+  ]
 }

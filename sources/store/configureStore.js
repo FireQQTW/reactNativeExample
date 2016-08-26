@@ -3,17 +3,25 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import devTools from 'remote-redux-devtools';
 import reducer from '../reducers'
+import Reactotron from 'reactotron-react-native'
+import createReactotronEnhancer from 'reactotron-redux'
+import createLogger from 'redux-logger'
+
+const reactotronEnhancer = createReactotronEnhancer(Reactotron, {})
+const logger = createLogger()
 
 export default function configureStore(initialState) {
   const store = createStore(
     reducer,
     initialState,
     compose(
-      applyMiddleware(thunk),
+      reactotronEnhancer,
+      applyMiddleware(thunk, logger),
       devTools({
         name: Platform.OS,
-        hostname: 'localhost',
-        port: 3456
+        // hostname: 'localhost',
+        // port: 3456,
+        realtime: true
       })
     )
   );

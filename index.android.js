@@ -1,3 +1,4 @@
+import './ReactotronConfig'
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -13,6 +14,7 @@ import {
   View,
 } from 'react-native';
 import { Provider } from 'react-redux'
+
 
 import ListViewBasics from './sources/components/listView'
 import NavigationBar from './sources/components/NavigationBar'

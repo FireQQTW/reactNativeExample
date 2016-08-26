@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import Reactotron from 'reactotron-react-native'
 
 import * as SeedActions from '../../actions/seed'
 
@@ -74,7 +75,8 @@ class ListViewEx extends Component {
 
   render() {
     // console.log('Partners: ', this.props.seed.posts )
-    console.log('list view GO!');
+    Reactotron.log('list view GO!');
+    Reactotron.warn('sdfasf');
     const { seed, dataSource } = this.props
 
     return (
@@ -151,7 +153,6 @@ const styles = StyleSheet.create({
 const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps ogogog');
   return {
     seed: state.seed,
     dataSource: dataSource.cloneWithRows(state.seed.posts),
