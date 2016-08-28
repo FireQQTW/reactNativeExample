@@ -8,7 +8,7 @@ const api = create({
 
 export const SETTING_NAME = 'SETTING_NAME';
 export const SETTING_ID = 'SETTING_ID';
-export const GET_POSTS = 'GET_POSTS';
+// export const GET_POSTS = 'GET_POSTS';
 export const GET_NEXT_POSTS = 'GET_NEXT_POSTS';
 
 export function setName() {
@@ -23,12 +23,12 @@ export function setID() {
   };
 };
 
-export function setPosts(data) {
-  return {
-    type: GET_POSTS,
-    data
-  };
-};
+// export function setPosts(data) {
+//   return {
+//     type: GET_POSTS,
+//     data
+//   };
+// };
 
 export function setNextPosts(data) {
   return {
@@ -66,7 +66,7 @@ export function callSetID() {
     dispatch(setID())
   }
 }
-
-function getPosts() {
-  return api.get('/api/v1/movies');
-}
+//
+// function getPosts() {
+//   return api.get('/api/v1/movies');
+// }

@@ -13,12 +13,14 @@ import { bindActionCreators } from 'redux'
 import Reactotron from 'reactotron-react-native'
 
 import * as SeedActions from '../../actions/seed'
+import { Actions as startupActions } from '../../actions/startup'
 
 
 
 class ContentBody extends Component {
   constructor(props, context) {
     super(props, context)
+
   }
 
   render() {
@@ -38,8 +40,9 @@ class ListViewEx extends Component {
       refreshing: false,
       searchText: ''
     };
-
-    this.props.callGetPosts()
+    console.log(this.props);
+    this.props.startup()
+    // this.props.callGetPosts()
   }
 
   _renderRow(rowData) {
@@ -152,15 +155,15 @@ const styles = StyleSheet.create({
 
 const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     seed: state.seed,
     dataSource: dataSource.cloneWithRows(state.seed.posts),
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(SeedActions, dispatch);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({...SeedActions, ...startupActions}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListViewEx)
